@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Σουβλάκι ή Καλαμάκι; Η Αλήθεια Πίσω από την Πιο Νόστιμη Ελληνική Διαμάχη</title>
+  <style>
+    /* Greek-inspired color palette */
+    :root {
+      --greek-blue: #0d5eaf;
+      --greek-white: #ffffff;
+      --greek-gold: #e6af2e;
+      --greek-red: #c1272d;
+      --greek-olive: #808000;
+      --greek-sand: #f4e9d0;
+      --greek-shadow: rgba(13, 94, 175, 0.15);
+    }
+    
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, var(--greek-sand) 0%, var(--greek-white) 100%);
+      color: #333;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: linear-gradient(90deg, var(--greek-blue) 33%, var(--greek-white) 33%, var(--greek-white) 66%, var(--greek-red) 66%);
+      z-index: 10;
+    }
+    
+    /* Header styles */
+    header {
+      text-align: center;
+      padding: 30px 0 20px;
+      margin-bottom: 30px;
+      position: relative;
+      animation: fadeInDown 1s ease-out;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      color: var(--greek-blue);
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px var(--greek-shadow);
+      position: relative;
+      display: inline-block;
+      padding: 0 15px;
+    }
+    
+    h1:after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 25%;
+      width: 50%;
+      height: 4px;
+      background: var(--greek-gold);
+      border-radius: 2px;
+    }
+    
+    h2 {
+      color: var(--greek-olive);
+      margin: 25px 0 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed var(--greek-gold);
+      position: relative;
+      animation: slideInLeft 0.8s ease-out;
+    }
+    
+    h3 {
+      color: var(--greek-blue);
+      margin: 20px 0 15px;
+    }
+    
+    /* Content styles */
+    .container {
+      background: var(--greek-white);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--greek-shadow);
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.2s ease-out;
+    }
+    
+    .container:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, var(--greek-blue), var(--greek-gold), var(--greek-red));
+    }
+    
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
+      animation: fadeIn 1.5s ease-out;
+    }
+    
+    ul {
+      margin: 15px 0 20px 25px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    li:before {
+      content: "•";
+      color: var(--greek-red);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -5px;
+    }
+    
+    strong {
+      color: var(--greek-blue);
+    }
+    
+    em {
+      color: var(--greek-olive);
+      font-style: italic;
+    }
+    
+    /* Food icons */
+    .food-icon {
+      font-size: 1.8rem;
+      display: inline-block;
+      margin: 0 5px;
+      animation: spin 8s linear infinite;
+    }
+    
+    .food-icon.small {
+      font-size: 1.2rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* Comparison section */
+    .comparison {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .card {
+      flex: 1;
+      min-width: 250px;
+      background: var(--greek-sand);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border: 2px solid var(--greek-gold);
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .card h3 {
+      color: var(--greek-red);
+      margin-top: 0;
+    }
+    
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      color: var(--greek-blue);
+      font-weight: bold;
+      position: relative;
+    }
+    
+    footer:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--greek-gold), transparent);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Responsive design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.4rem;
+      }
+      
+      .container {
+        padding: 20px 15px;
+      }
+      
+      .comparison {
+        flex-direction: column;
+      }
+      
+      .card {
+        min-width: 100%;
+      }
+    }
+    
+    /* Decorative elements */
+    .olive {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: var(--greek-olive);
+      border-radius: 50%;
+      z-index: -1;
+    }
+    
+    .olive:nth-child(1) {
+      top: 20%;
+      left: 5%;
+      animation: float 8s infinite ease-in-out;
+    }
+    
+    .olive:nth-child(2) {
+      top: 40%;
+      right: 7%;
+      animation: float 10s infinite ease-in-out;
+    }
+    
+    .olive:nth-child(3) {
+      bottom: 20%;
+      left: 10%;
+      animation: float 12s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorative olives -->
+  <div class="olive"></div>
+  <div class="olive"></div>
+  <div class="olive"></div>
+  
+  <header>
+    <h1><span class="food-icon">🥙</span> Σουβλάκι ή Καλαμάκι; <span class="food-icon">🍢</span><br>Η Αλήθεια Πίσω από την Πιο Νόστιμη Ελληνική Διαμάχη</h1>
+  </header>
+  
+  <div class="container">
+    <p>Αν έχεις βρεθεί ποτέ να παραγγέλνεις φαγητό στην Ελλάδα, το πιθανότερο είναι πως έχεις εμπλακεί σε μια από τις πιο "καυτές" γαστρονομικές διαμάχες της χώρας: <strong>Καλαμάκι ή σουβλάκι;</strong> Και τελικά, ποιο είναι το σωστό;</p>
+    
+    <p>Ας βάλουμε τα πράγματα στη θέση τους – ιστορικά, γλωσσολογικά και… πολιτισμικά.</p>
+    
+    <h2><span class="food-icon">🔥</span> Το Σουβλάκι: Το Πρωτότυπο</h2>
+    <p>Η λέξη <strong>σουβλάκι</strong> προέρχεται από τη λέξη <em>σούβλα</em>, δηλαδή το μεταλλικό σκεύος επάνω στο οποίο ψηνόταν το κρέας.</p>
+    <p>Στην αρχική του μορφή, το σουβλάκι ήταν ένα σιδερένιο μικρό σουβλί, που περνούσαν πάνω του 150γρ ή και παραπάνω κρέατος. Ήταν ένα πλήρες γεύμα, όχι απλώς σνακ, και προσφερόταν σε μαγαζιά ή σε γιορτές, συνήθως ως μερίδα.</p>
+    
+    <h2><span class="food-icon">🌾</span> Το Καλαμάκι: Η Εξέλιξη του Street Food</h2>
+    <p>Με την ανάγκη για πιο γρήγορη, φθηνότερη και ευέλικτη εκδοχή του σουβλακιού, εμφανίστηκε το <strong>καλαμάκι</strong>.</p>
+    <p>Το όνομα "καλαμάκι" δεν είναι τυχαίο: το ξύλινο στικ στο οποίο περνιέται το κρέας θυμίζει καλάμι (και στις πρώτες εκδοχές, ήταν όντως από καλάμι μπαμπού). Η μερίδα του κρέατος ήταν μικρότερη, γύρω στα 80γρ, και ψηνόταν πολύ πιο γρήγορα — ιδανικό για γρήγορο σνακ στο δρόμο.</p>
+    <p>Έτσι, το καλαμάκι αντικατέστησε σταδιακά το βαρύτερο "σουβλάκι" σε πολλές περιοχές.</p>
+    
+    <h2><span class="food-icon">🥙</span> Το Τυλιχτό: Πίτα με... Τι;</h2>
+    <p>Κάπου εκεί μπήκε στο παιχνίδι και το <strong>τυλιχτό</strong>: πίτα με κρέας, ντομάτα, πατάτες, κρεμμύδι και σάλτσα, για κατανάλωση στο χέρι.</p>
+    <p>Αρχικά, το τυλιχτό γέμιζε με το κανονικό σουβλάκι, δηλαδή τη μεταλλική σούβλα με περισσότερο κρέας. Έτσι, όταν κάποιος ζητούσε "μια πίτα με σουβλάκι", εννοούσε κυριολεκτικά μια πίτα με σουβλάκι μέσα.</p>
+    <p>Με τον καιρό, όμως, η σούβλα εγκαταλείφθηκε, και το μικρότερο καλαμάκι πήρε τη θέση του. Παρ’ όλα αυτά, η φράση "σουβλάκι" παρέμεινε για να περιγράψει το τυλιχτό.</p>
+    <p>Έτσι ξεκίνησε η παρερμηνεία που επικράτησε ιδιαίτερα στην Αττική:</p>
+    <ul>
+      <li><em>"Σουβλάκι με καλαμάκι"</em> <span class="food-icon small">🤔</span></li>
+      <li><em>και το πιο μπερδεμένο: "Σουβλάκι με γύρο"</em> <span class="food-icon small">😵</span></li>
+    </ul>
+    
+    <div class="comparison">
+      <div class="card">
+        <span class="card-icon">🏛️</span>
+        <h3>Αθήνα και Νότια Ελλάδα:</h3>
+        <p><strong>Καλαμάκι</strong> = το κρέας σε ξυλάκι</p>
+        <p><strong>Σουβλάκι</strong> = το τυλιχτό</p>
+      </div>
+      
+      <div class="card">
+        <span class="card-icon">🏰</span>
+        <h3>Θεσσαλονίκη και Βόρεια Ελλάδα:</h3>
+        <p><strong>Σουβλάκι</strong> = το ξυλάκι με το κρέας</p>
+        <p><strong>Πίτα</strong> ή <strong>τυλιχτό</strong> = η πίτα με γέμιση</p>
+      </div>
+    </div>
+    
+    <p>Άρα, γεωγραφικά υπάρχει διχογνωμία, όμως ετυμολογικά… το καλαμάκι είναι το σωστό όνομα για την ξυλόσουβλα, και το σουβλάκι, το αυθεντικό μεταλλικό.</p>
+    
+    <h2><span class="food-icon">🧃</span> Το Καλαμάκι στο Ποτό: Ένας Γλωσσικός Συμβιβασμός</h2>
+    <p>Και το καλαμάκι που πίνουμε καφέ ή χυμό;</p>
+    <p>Η ονομασία αυτή ήρθε πολύ αργότερα και είναι παραπλανητική. Δεν έχει σχέση με το φαγητό, αλλά βασίζεται στην ομοιότητα του πλαστικού σωλήνα με το καλάμι (καλαμάκι).</p>
+    <p>Η σωστή του ονομασία είναι:</p>
+    <ul>
+      <li>Μυζητικό σωληνάκι</li>
+      <li>Αναρροφητικό σωλήνιο</li>
+    </ul>
+    <p>αλλά... ποιος τα λέει αυτά σε καφετέρια; <span class="food-icon small">😅</span></p>
+    
+    <h2><span class="food-icon">🧠</span> Συμπέρασμα</h2>
+    <p>Η διαφορά ανάμεσα σε σουβλάκι και καλαμάκι δεν είναι απλώς γεωγραφική, είναι ιστορική, γλωσσολογική και ποσοτική.</p>
+    
+    <ul>
+      <li>Το <strong>σουβλάκι</strong> ξεκίνησε ως βαρύτερο, μεταλλικό γεύμα.</li>
+      <li>Το <strong>καλαμάκι</strong> ήρθε ως γρήγορο, ξύλινο street food.</li>
+      <li>Το <strong>τυλιχτό</strong> ήρθε να μπερδέψει την ορολογία, και ο κόσμος το βάφτισε "σουβλάκι", παρόλο που μπορεί να έχει μέσα γύρο, κοτόπουλο ή οτιδήποτε άλλο εκτός από... σουβλάκι.</li>
+    </ul>
+    
+    <h3><span class="food-icon">📣</span> Μια πρόταση:</h3>
+    <p>Ας το φωνάζει ο καθένας όπως θέλει, αλλά ας ξέρει και <em>γιατί</em> το λέει έτσι.</p>
+  </div>
+  
+  <footer>
+    <p><strong>Καλή όρεξη — με ή χωρίς καλαμάκι! <span class="food-icon">😉</span></strong></p>
+  </footer>
+  
+  <script>
+    // Add subtle animations to cards on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        observer.observe(card);
+      });
+      
+      // Add CSS for the new animation
+      const style = document.createElement('style');
+      style.innerHTML = `
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>
